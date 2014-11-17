@@ -1,0 +1,29 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "New Suitcase", new_suitcase_path, class: "btn btn-info" %>
+  </div>
+  <h1>Suitcases</h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suitcases.each do |suitcase| %>
+      <tr>
+        <td><%= link_to suitcase.description, suitcase_path(suitcase) %></td>
+        <td>
+          <div class="pull-right">
+            <%= link_to "edit", edit_suitcase_path(suitcase) %>
+            |
+            <%= link_to "delete", suitcase_path(suitcase, method: :delete, data: {confirm: "Are you sure?"}) %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
