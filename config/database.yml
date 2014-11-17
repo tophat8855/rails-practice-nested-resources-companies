@@ -3,8 +3,8 @@ default: &default
 
 development:
   <<: *default
-  database: rails-practice-nested-resources-development
+  database: rails-practice-nested-resources-companies-development
 
 test:
   <<: *default
-  database: rails-practice-nested-resources-test
+  database: rails-practice-nested-resources-companies-test

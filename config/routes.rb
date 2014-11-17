@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "passengers#index"
-  resources :passengers
-  resources :suitcases
+  root to: "companies#index"
+  resources :companies
+  resources :events
 end
