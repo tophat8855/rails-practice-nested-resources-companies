@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   def create
     @event = @company.events.new(event_params)
     if @event.save
-      redirect_to event_path(@event)
+      redirect_to company_event_path(@company, @event)
     else
       render :new
     end
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
   def update
     @event = @company.events.find(params[:id])
     if @event.update(event_params)
-      redirect_to event_path(@event)
+      redirect_to company_event_path(@company, @event)
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   def destroy
     @event = @company.events.find(params[:id])
     @event.destroy
-    redirect_to events_path
+    redirect_to companry_events_path(@company)
   end
 
   private
