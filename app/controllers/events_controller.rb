@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   def destroy
     @event = @company.events.find(params[:id])
     @event.destroy
-    redirect_to companry_events_path(@company)
+    redirect_to company_events_path(@company)
   end
 
   private
