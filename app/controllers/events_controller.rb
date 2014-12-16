@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action do
+    @company = Company.find(params[:company_id])
+  end
 
   def index
     @events = Event.all
